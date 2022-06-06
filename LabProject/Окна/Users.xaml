@@ -1,0 +1,32 @@
+﻿<Window x:Class="LabProject.Окна.Users"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LabProject.Окна"
+        mc:Ignorable="d"
+        Title="Пользователи" Height="440.2" Width="822.8" WindowStartupLocation="CenterScreen" WindowStyle="None">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <ListView HorizontalAlignment="Left" Height="382" Margin="0,0,-0.4,0" VerticalAlignment="Top" Width="806" ItemsSource="{Binding Users}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Имя" DisplayMemberBinding="{Binding FirstName}"/>
+                    <GridViewColumn Header="Фамилия" DisplayMemberBinding="{Binding LastName}"/>
+                    <GridViewColumn Header="Отчество" DisplayMemberBinding="{Binding Patronymic}"/>
+                    <GridViewColumn Header="Логин" DisplayMemberBinding="{Binding LoginUser}"/>
+                    <GridViewColumn Header="Пароль" DisplayMemberBinding="{Binding PassUser}"/>
+                    <GridViewColumn Header="Телефон" DisplayMemberBinding="{Binding Phonenumber}"/>
+                    <GridViewColumn Header="Адрес" DisplayMemberBinding="{Binding Adress}"/>
+                    <GridViewColumn Header="Паспорт" DisplayMemberBinding="{Binding Passport}"/>
+                    <GridViewColumn Header="Должность" DisplayMemberBinding="{Binding Position.Name}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Content="Закрыть" HorizontalAlignment="Left" Margin="0,380,0,0" VerticalAlignment="Top" Width="75" Height="48" Click="CloseUsers" Cursor="Hand" FontFamily="Arial Black" FontSize="14"/>
+        <Image HorizontalAlignment="Left" Height="39" Margin="771,0,-14.4,0" VerticalAlignment="Top" Width="49" Source="3270311-middle.png" Cursor="Hand" MouseLeftButtonDown="Update"/>
+    </Grid>
+</Window>
